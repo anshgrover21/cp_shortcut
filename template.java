@@ -185,7 +185,7 @@ public class template {
         
     
      public static void main(String[] args) {
-            D_Exam_in_MAC  sol = new D_Exam_in_MAC ();
+            template  sol = new template ();
             try {
                 sol.run();
             } catch (FileNotFoundException e) {
