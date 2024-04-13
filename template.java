@@ -130,24 +130,23 @@ public class template {
             return e;
     }
    
-   
-    public int[] prefixSum(int[] a) 
+     public long[] prefixSum(int[] a) 
     {
     
-        int[] sum = new int[a.length +1];
-        for(int i=1;i<a.length+1;i++) sum[i] =  sum[i-1]+a[i-1];
+        long[] sum = new long[a.length +1];
+        for(int i=1;i<a.length+1;i++) sum[i] =  sum[i-1]+(long)a[i-1];
 
         return sum;
     }
 
-    public int[] suffixSum(int[] a) 
+    public long[] suffixSum(int[] a) 
     {
 
-        int[] sum = new int[a.length +1];
-        for(int i=a.length;i>=0;i++) sum[i] =  sum[i+1]+a[i];
+        long[] sum = new long[a.length +1];
+        for(int i=a.length-1;i>=0;i--) sum[i] =  sum[i+1]+(long)a[i];
         return sum;
     
-    }
+    }   
    
    
     public int __gcd(int a, int b) {
