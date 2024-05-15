@@ -39,6 +39,16 @@ public class template {
         return idx;
     }
 
+    // to check the cell is valid or not
+     private boolean isValidCell(int[][] mat, int i, int j , int n , int m) {
+        int n = mat.length;
+        return i >= 0 && j >= 0 && i < n && j < m;
+    }
+
+     final int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+
+    
+
 
     String filename = null;
     InputReader sc;
