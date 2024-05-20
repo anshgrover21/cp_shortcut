@@ -30,6 +30,13 @@ public class template {
         System.out.println();
     }
 
+      public void printArray(long[] a){
+        for (long i : a) {
+            System.out.print(i+ " ");
+        }
+        System.out.println();
+    }
+
     public int greaterCount(ArrayList<Integer> a , int val){
         int idx = upper_bound(a,val);
         if(idx ==-1){
