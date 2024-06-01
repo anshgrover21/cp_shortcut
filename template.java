@@ -19,6 +19,56 @@ public class template {
     }
 
 
+    //trie implementation
+    class Trie{
+      
+        HashMap<Character,Trie> edge = new HashMap<>();
+        boolean iswordEnd;
+
+        public void insert(String word , Trie root){
+
+            Trie currNode = root;
+            
+            for(char c : word.toCharArray()){
+                if(!currNode.edge.containsKey(c)){
+                    currNode.edge.put(c,new Trie());
+                }
+                currNode = currNode.edge.get(c);
+            }
+
+            currNode.iswordEnd =true;
+     
+        }
+
+        public boolean search(String word,Trie root){
+            
+            Trie currNode = root;
+            
+            for(char c : word.toCharArray()){
+                if(!currNode.edge.containsKey(c)){
+                    return false;
+                }
+                currNode = currNode.edge.get(c);
+            }
+
+           if(currNode.iswordEnd ==true)return true;
+           else return false;
+        }
+        
+
+    }
+    //counting with prefix using trie
+    public int countWithPrefix(Trie node){
+        if(node==null||node.edge.isEmpty())return 1;
+        int a=0;
+        for(char c : node.edge.keySet()){
+            a += countWithPrefix(node.edge.get(c));
+        }
+        if(node.iswordEnd)a++;
+        return a;
+    }
+
+
     public void debug(){
         System.out.println("**");
     }
@@ -48,7 +98,6 @@ public class template {
 
     // to check the cell is valid or not
      private boolean isValidCell(int[][] mat, int i, int j , int n , int m) {
-        int n = mat.length;
         return i >= 0 && j >= 0 && i < n && j < m;
     }
 
@@ -62,6 +111,8 @@ public class template {
 
     /*------------------------------    Solve   ------------------- */
     
+  
+
     
     void solve() {
     //      int n= sc.nextInt();
@@ -72,8 +123,11 @@ public class template {
     //    int a[] = sc.nextArray(n);
     //      StringBuilder s = new StringBuilder(sc.next());
     //      StringBuilder[] st = new StringBuilder[n];
-          
-    
+
+            
+
+
+
     }
 
 
